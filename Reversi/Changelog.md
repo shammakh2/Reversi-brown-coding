@@ -15,6 +15,11 @@
         In the while loop, changed `d_col += dir[0];` to `d_col += dir[1];`, so the cell checks all directions in a loop.  
         This stops the program from getting stuck in the while loop and the while loop checks every direction rather 
         than just the diagonals
+        
+    3. Package: `uk.ac.ncl.game`, Class: `MoveChecker`, Method: `findPotentialMoves`
+    
+        In both for loop conditions, changed condition from `<= BOARD_SIZE` to `< BOARD_SIZE` to fix IndexOutOfBoundException.
+
 
 
 + #####Version 0.0.1 || Bugfixing || Date: 23 March 2020   
