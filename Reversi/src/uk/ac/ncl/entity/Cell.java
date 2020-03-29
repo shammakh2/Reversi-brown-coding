@@ -9,6 +9,7 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static uk.ac.ncl.Constants.BOARD_SIZE;
 
@@ -90,7 +91,7 @@ public class Cell {
 
     public int getRow() {
         return column;
-    }
+    } //Error fixed here. Returns row instead of column.
 
     public int getColumn() {
         return column;
@@ -121,13 +122,13 @@ public class Cell {
         for (int[] dir : DIRS){
             int temp_score = 0;
             int d_row = this.getRow() + dir[0];
-            int d_col = this.getColumn() + dir[1];
+            int d_col = this.getColumn() + dir[0];
             if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row && d_row < BOARD_SIZE
                     && cells[d_row][d_col].getValue() != CellStatus.EMPTY
                     && cells[d_row][d_col].getValue() == opponent) {
                 while (true){
                     d_row += dir[0];
-                    d_col += dir[0];
+                    d_col += dir[1];
                     temp_score += 1;
                     if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row
                             && cells[d_row][d_col].getValue() != CellStatus.EMPTY){

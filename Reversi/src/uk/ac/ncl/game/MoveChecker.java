@@ -23,7 +23,7 @@ public class MoveChecker {
     private Cell[][] cells;
 
     public MoveChecker(Cell[][] cells) {
-
+        this.cells = cells;
     }
 
     /**
@@ -33,7 +33,7 @@ public class MoveChecker {
      * @return a piece to make a move
      */
     public Cell generateOpponent(CellStatus cellStatus) {
-        ArrayList<Cell> potentialMoves = findPotentialMoves(CellStatus.DARK);
+        ArrayList<Cell> potentialMoves = findPotentialMoves(cellStatus.DARK); //changed the argument passed to findPotentialMoves to cellStatus. cellStatus is the color passed to it but wasn't used in the method.
         int max_score = 0;
         Cell opponentsMove = null;
         for (int i = 0; i < potentialMoves.size(); i++){
@@ -58,7 +58,6 @@ public class MoveChecker {
             int d_col = cell.getColumn();
 
             while (d_col != move.getCell().getColumn() && d_row != move.getCell().getRow()) {
-
                 d_row += dir[0];
                 d_col += dir[1];
             }
@@ -109,7 +108,7 @@ public class MoveChecker {
             for (int column = 0; column < BOARD_SIZE; column++) {
                 if (this.cells[column][row].getValue() == CellStatus.LIGHT){
                     lights++;
-                } else if this.cells[row][column].getValue() == CellStatus.DARK{
+                } else if (this.cells[row][column].getValue() == CellStatus.DARK) { //Added brackets around the condition because it wasn't present
                     darks++;
                 }
             }

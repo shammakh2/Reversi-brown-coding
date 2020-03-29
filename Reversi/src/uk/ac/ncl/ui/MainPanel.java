@@ -36,6 +36,7 @@ public class MainPanel extends JFrame {
         moveChecker.removeMoves(grayCells);
         grayCells = moveChecker.findPotentialMoves(PLAYERS_CELL_STATUS);
         moveChecker.colourPieces(grayCells, CellStatus.GRAY);
+        System.out.println("ends main panel");
     }
 
     /**
