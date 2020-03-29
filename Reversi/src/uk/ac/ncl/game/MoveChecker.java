@@ -35,7 +35,7 @@ public class MoveChecker {
      * @return a piece to make a move
      */
     public Cell generateOpponent(CellStatus cellStatus) {
-        ArrayList<Cell> potentialMoves = findPotentialMoves(cellStatus.DARK); //changed the argument passed to findPotentialMoves to cellStatus. cellStatus is the color passed to it but wasn't used in the method.
+        ArrayList<Cell> potentialMoves = findPotentialMoves(cellStatus); //changed the argument passed to findPotentialMoves to cellStatus. cellStatus is the color passed to it but wasn't used in the method.
         int max_score = 0;
         Cell opponentsMove = null;
         for (int i = 0; i < potentialMoves.size(); i++){

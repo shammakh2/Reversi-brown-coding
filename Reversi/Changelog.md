@@ -10,6 +10,16 @@
 
         Return set to  `column` gaves and error in test `generateOpponentDark` because it is a getter to get rows and
         since it didn't, it caused a `NullPointerException` in the `findPotentialMoves` method.
+        
+    2. Package: `uk.ac.ncl.game`, Class: `MoveChecker`, Method: `generateOpponent`
+
+        Changed the argument of the `findPotentialMoves` function call to the parameter `cellStatus`.
+
+        This was done because in `generateOpponentLight` test the argument passed to `generateOpponent` wasn't used and
+        and that caused an error at the first assert statement.
+        Now it finds potential moves for the value passed to it rather than just moves for the dark status player.
+
+
 
 + #####Version 0.0.2 || Bugfixing || Date: 23 March 2020
         Fixed all syntax errors but program crashes on `NullPointerException`, `IndexOutOfBoundException` or  doesn't display anything but continues to run. Fixing this issue.
