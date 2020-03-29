@@ -90,7 +90,7 @@ public class Cell {
     }
 
     public int getRow() {
-        return column;
+        return row;
     } //Error fixed here. Returns row instead of column.
 
     public int getColumn() {

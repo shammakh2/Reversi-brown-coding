@@ -1,6 +1,16 @@
 #Reversi
 ###Changelog
 
++ #####Version 0.0.3 || Bugfixing || Date: 24 March 2020
+        Fixing issues found using junit tests.
+
+    1. Package: `uk.ac.ncl.entity`, Class: `Cell`, Method: `getRow`
+
+        Changed the return value of `getRow` method to `return row;` from `return column`.
+
+        Return set to  `column` gaves and error in test `generateOpponentDark` because it is a getter to get rows and
+        since it didn't, it caused a `NullPointerException` in the `findPotentialMoves` method.
+
 + #####Version 0.0.2 || Bugfixing || Date: 23 March 2020
         Fixed all syntax errors but program crashes on `NullPointerException`, `IndexOutOfBoundException` or  doesn't display anything but continues to run. Fixing this issue.
 
