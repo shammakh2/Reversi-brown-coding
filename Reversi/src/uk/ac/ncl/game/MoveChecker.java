@@ -23,7 +23,9 @@ public class MoveChecker {
     private Cell[][] cells;
 
     public MoveChecker(Cell[][] cells) {
+
         this.cells = cells;
+
     }
 
     /**
