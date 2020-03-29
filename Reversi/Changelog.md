@@ -1,6 +1,16 @@
 #Reversi
 ###Changelog
 
++ #####Version 0.0.3 || Bugfixing || Date: 28 March 2020
+        Fixing error given by the 'flipCheckers' test.
+
+    1. Package: `uk.ac.ncl.game`, Class: `MoveChecker`, Method: `flipPieces`
+
+        Changed the 'and' operator between the while loop conditions to 'or' so it runs on cells in every direction and
+         not just diagonals.
+
+
+
 + #####Version 0.0.3 || Bugfixing || Date: 24 March 2020
         Fixing issues found using junit tests.
 
