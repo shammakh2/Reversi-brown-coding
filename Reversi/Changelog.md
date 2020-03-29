@@ -9,6 +9,11 @@
         Changed the 'and' operator between the while loop conditions to 'or' so it runs on cells in every direction and
          not just diagonals.
 
+    2. Package: `uk.ac.ncl.game`, Class: `MoveChecker`, Method: `flipPieces`
+    
+        Added line `this.cells[d_row][d_col].setValue(colour);` in the while loop.
+        
+        This was done because the cells were not changing color on move and flipCheckers test was giving an error.
 
 
 + #####Version 0.0.3 || Bugfixing || Date: 24 March 2020
