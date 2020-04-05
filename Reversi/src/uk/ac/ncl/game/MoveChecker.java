@@ -24,7 +24,7 @@ public class MoveChecker {
 
     public MoveChecker(Cell[][] cells) {
 
-        this.cells = cells;
+        this.cells = cells;  // Added this line to initialize the field and because the parameter variable wasn't used.
 
     }
 
@@ -75,8 +75,8 @@ public class MoveChecker {
      */
     public ArrayList<Cell> findPotentialMoves(CellStatus colour) {
         ArrayList<Cell> potentialMoves = new ArrayList<Cell>();
-        for (int i = 0; i < BOARD_SIZE; i++) {
-            for (int j = 0; j < BOARD_SIZE; j++) {
+        for (int i = 0; i < BOARD_SIZE; i++) { // '<=' operator changed to '<'
+            for (int j = 0; j < BOARD_SIZE; j++) { // '<=' operator changed to '<'
                 if (this.cells[i][j].getValue() == CellStatus.EMPTY){
                     if (this.cells[i][j].isLegal(colour, cells)){
                         potentialMoves.add(this.cells[i][j]);

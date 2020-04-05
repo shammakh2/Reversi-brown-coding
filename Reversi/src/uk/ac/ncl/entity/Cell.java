@@ -128,7 +128,7 @@ public class Cell {
                     && cells[d_row][d_col].getValue() == opponent) {
                 while (true){
                     d_row += dir[0];
-                    d_col += dir[1];
+                    d_col += dir[1]; // Changed 'dir[0]' to dir[1]
                     temp_score += 1;
                     if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row
                             && cells[d_row][d_col].getValue() != CellStatus.EMPTY){

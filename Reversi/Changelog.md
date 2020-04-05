@@ -1,6 +1,15 @@
 #Reversi
 ###Changelog
 
++ #####Version 0.0.4 || Bugfixing || Date: 1st April 2020
+        Fixing issues found using junit tests.
+
+    1. Package: `uk.ac.ncl.tests`, Class: `MoveCheckerTest`, Method: `findPotentialMoves`
+
+        The condition for the first `assertTrue` statement should be `grayCells.size() == 4` because there are only 
+        4 possible moves at the start of the game.
+        
+
 + #####Version 0.0.3 || Bugfixing || Date: 28 March 2020
         Fixing error given by the 'flipCheckers' test.
 

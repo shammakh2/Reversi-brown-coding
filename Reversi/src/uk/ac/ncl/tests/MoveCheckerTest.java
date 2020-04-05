@@ -2,7 +2,7 @@ package uk.ac.ncl.tests;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import uk.ac.ncl.entity.Cell;
+import uk.ac.ncl.entity.Cell; // Added semi-colon at the end.
 import uk.ac.ncl.entity.CellStatus;
 import uk.ac.ncl.game.MoveChecker;
 
@@ -69,7 +69,7 @@ class MoveCheckerTest {
     @Test
     void findPotentialMoves() {
         ArrayList<Cell> grayCells = moveChecker.findPotentialMoves(CellStatus.DARK);
-        assertTrue(grayCells.size() == 5);
+        assertTrue(grayCells.size() == 4); // should be 4 possible moves
         assertTrue(grayCells.contains(cells[2][4]));
         assertTrue(grayCells.contains(cells[3][5]));
         assertTrue(grayCells.contains(cells[4][2]));
@@ -93,7 +93,7 @@ class MoveCheckerTest {
 
     @Test
     void getFinalScore() {
-        String result = "The game is over. It is a draw. Each player has " + 2;
+        String result = "The game is over. It is a draw. Each player has " + 2 + " "; // Fixed missing last word "pieces"
         assertTrue(result.equals(moveChecker.getFinalScore()));
     }
 
