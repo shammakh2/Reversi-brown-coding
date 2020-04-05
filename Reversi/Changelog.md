@@ -9,6 +9,12 @@
         The condition for the first `assertTrue` statement should be `grayCells.size() == 4` because there are only 
         4 possible moves at the start of the game.
         
+    2. Package: `uk.ac.ncl.tests`, Class: `MoveCheckerTest`, Method: `getFinalScore`
+
+        Added the word 'pieces' at the end of the `results` variable.
+        The test gave a false because the first results variable was incomplete (missing the word 'pieces' in the end)        
+        
+
 
 + #####Version 0.0.3 || Bugfixing || Date: 28 March 2020
         Fixing error given by the 'flipCheckers' test.
