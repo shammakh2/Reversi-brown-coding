@@ -8,6 +8,12 @@
 
         Added `d_row < BOARD_SIZE` as another condition of if statement in the while loop.  
         Method was giving IndexOutOfBound exception so added the condition to fix it.
+                
+    2. Package: `uk.ac.ncl.entity`, Class: `Cell`, Method: `inLegal`
+    
+            Removed `cells[d_row][d_col].getValue() != CellStatus.EMPTY` condition from if statement in the while loop.  
+            It was removed because it was redundant because the next if statement already has a condition dealing with 
+            the color of tile.
         
 
 + #####Version 0.0.4 || Bugfixing || Date: 1st April 2020
