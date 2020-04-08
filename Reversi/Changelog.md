@@ -1,6 +1,15 @@
 #Reversi
 ###Changelog
 
++ #####Version 0.0.5 || Bugfixing || Date: 2nd April 2020
+        Fixing more bugs in the code.
+
+    1. Package: `uk.ac.ncl.entity`, Class: `Cell`, Method: `inLegal`
+
+        Added `d_row < BOARD_SIZE` as another condition of if statement in the while loop.  
+        Method was giving IndexOutOfBound exception so added the condition to fix it.
+        
+
 + #####Version 0.0.4 || Bugfixing || Date: 1st April 2020
         Fixing issues found using junit tests.
 
