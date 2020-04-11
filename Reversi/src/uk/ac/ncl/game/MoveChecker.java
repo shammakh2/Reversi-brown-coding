@@ -80,10 +80,12 @@ public class MoveChecker {
                 if (this.cells[i][j].getValue() == CellStatus.EMPTY){
                     if (this.cells[i][j].isLegal(colour, cells)){
                         potentialMoves.add(this.cells[i][j]);
+                        System.out.println("i: " + i + "    j: "+ j);
                     }
                 }
             }
         }
+        System.out.println("potentz sixe " + potentialMoves.size());
         return potentialMoves;
     }
 

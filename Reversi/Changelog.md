@@ -8,7 +8,23 @@
 
         Added `d_row < BOARD_SIZE` as another condition of if statement in the while loop.  
         Method was giving IndexOutOfBound exception so added the condition to fix it.
-     
+    
+    2. Package: `uk.ac.ncl.ui`, Class: `MainPanel`
+        
+        Writing code to implement skip turn rule of the game.
+        
+        Method: `CheckNextMove`  
+        Changed if statement condition to `missedMoves > 0`.
+        
+        Method: `MoveOpponent`
+        Put an if statement around flipPieces method call to make sure parameter isn't null
+        Removed `missedMoves += 1;`
+        Added code to perform second opponent move if player move not possible.
+        
+        Method: `MovePlayer`
+        Added else if statement to see when no moves available and game ends
+        Added else statement to perform second player more if opponent move not available.
+        
         
 
 + #####Version 0.0.4 || Bugfixing || Date: 1st April 2020
@@ -48,7 +64,7 @@
 
         Changed the return value of `getRow` method to `return row;` from `return column`.
 
-        Return set to  `column` gaves and error in test `generateOpponentDark` because it is a getter to get rows and
+        Return set to  `column` gives and error in test `generateOpponentDark` because it is a getter to get rows and
         since it didn't, it caused a `NullPointerException` in the `findPotentialMoves` method.
         
     2. Package: `uk.ac.ncl.game`, Class: `MoveChecker`, Method: `generateOpponent`

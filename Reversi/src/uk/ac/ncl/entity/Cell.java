@@ -131,11 +131,13 @@ public class Cell {
                     d_col += dir[1]; // Changed 'dir[0]' to dir[1]
                     temp_score += 1;
 
-                     if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row && d_row < BOARD_SIZE && cells[d_row][d_col].getValue() != CellStatus.EMPTY){ // Added `d_row < BOARD_SIZE` as a condition.
-                            isLegal = true;
-                            score += temp_score;
-                            moves.add(new DirectedMove(cells[d_row][d_col], dir));
-                        }
+                     if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row && d_row < BOARD_SIZE && cells[d_row][d_col].getValue() != CellStatus.EMPTY) { // Added `d_row < BOARD_SIZE` as a condition.
+                         if (cells[d_row][d_col].getValue() == colour) {
+                             isLegal = true;
+                             score += temp_score;
+                             moves.add(new DirectedMove(cells[d_row][d_col], dir));
+                         }
+                     }
                     else {
                         break;
                     }

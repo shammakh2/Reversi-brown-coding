@@ -36,7 +36,6 @@ public class MainPanel extends JFrame {
         moveChecker.removeMoves(grayCells);
         grayCells = moveChecker.findPotentialMoves(PLAYERS_CELL_STATUS);
         moveChecker.colourPieces(grayCells, CellStatus.GRAY);
-        System.out.println("ends main panel");
     }
 
     /**
@@ -91,12 +90,15 @@ public class MainPanel extends JFrame {
      * @param moveChecker
      */
     private void CheckNextMove(MoveChecker moveChecker){
-        if (missedMoves > 1) {
+        if (missedMoves > 0) {
             JOptionPane.showMessageDialog(this, moveChecker.getFinalScore());
             System.exit(0);
         }
-        else
+        else {
             moveChecker.colourPieces(grayCells, CellStatus.GRAY);
+
+
+        }
     }
 
     /**
@@ -105,12 +107,22 @@ public class MainPanel extends JFrame {
      * @param opponent
      */
     private void MoveOpponent(Cell opponent){
-        moveChecker.flipPieces(opponent, OPPONENTS_CELL_STATUS);
-        missedMoves += 1;
+        if (opponent != null) {
+            moveChecker.flipPieces(opponent, OPPONENTS_CELL_STATUS);
+        }
         moveChecker.removeMoves(grayCells);
         grayCells = moveChecker.findPotentialMoves(PLAYERS_CELL_STATUS);
-        if (grayCells.size() == 0)
-            missedMoves += moveChecker.findPotentialMoves(OPPONENTS_CELL_STATUS).size() > 0 ? 1 : 2;
+        if (grayCells.size() == 0) {
+            Cell nopponent = moveChecker.generateOpponent(OPPONENTS_CELL_STATUS);
+            if (nopponent != null) {
+                opponent.colourTemp(OPPONENTS_COLOUR, true);
+                ActionListener taskPerformer = ae -> MoveOpponent(nopponent);
+                setUpTimer(taskPerformer);
+                JOptionPane.showMessageDialog(this, "Skipped Black");
+            }else{
+                missedMoves += 1;
+            }
+        }
         CheckNextMove(moveChecker);
     }
 
@@ -128,6 +140,14 @@ public class MainPanel extends JFrame {
                 opponent.colourTemp(OPPONENTS_COLOUR, true);
                 ActionListener taskPerformer = ae -> MoveOpponent(opponent);
                 setUpTimer(taskPerformer);
+            }else if(moveChecker.findPotentialMoves(PLAYERS_CELL_STATUS).size() == 0 && moveChecker.findPotentialMoves(OPPONENTS_CELL_STATUS).size() == 0){
+                MoveOpponent(null);
+                CheckNextMove(moveChecker);
+            }else{
+                JOptionPane.showMessageDialog(this, "Skipped " + OPPONENTS_CELL_STATUS);
+                MoveOpponent(null);
+                CheckNextMove(moveChecker);
+
             }
         }
         else{
