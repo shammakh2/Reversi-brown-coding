@@ -4,7 +4,7 @@
 + #####Version 0.0.5 || Bugfixing || Date: 2nd April 2020
         Fixing more bugs in the code.
 
-    1. Package: `uk.ac.ncl.entity`, Class: `Cell`, Method: `inLegal`
+    1. Package: `uk.ac.ncl.entity`, Class: `Cell`, Method: `isLegal`
 
         Added `d_row < BOARD_SIZE` as another condition of if statement in the while loop.  
         Method was giving IndexOutOfBound exception so added the condition to fix it.
@@ -24,6 +24,12 @@
         Method: `MovePlayer`
         Added else if statement to see when no moves available and game ends
         Added else statement to perform second player more if opponent move not available.
+        
+    3. Package: `uk.ac.ncl.entity`, Class: `Cell`, Method: `isLegal`
+    
+        Added `break;` in the nested if statement.
+        This is to stop flipping pieces after reaching closest piece that is the same color as the color playing the
+        turn.
         
         
 
