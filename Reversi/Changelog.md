@@ -1,6 +1,15 @@
 #Reversi
 ###Changelog
 
++ #####Version 0.0.6 || Bugfixing || Date: 1st May 2020
+        Fixing issues found using junit tests.
+
+    1. Package: `uk.ac.ncl.game`, Class: `MoveChecker`, Method: `getFinalScore`
+
+        Changed `this.cells[column][row].getValue()` to `this.cells[row][column].getValue()`
+        (swapped row and column index pointers) in first `if` statement.
+        
+
 + #####Version 0.0.5 || Bugfixing || Date: 2nd April 2020
         Fixing more bugs in the code.
 
