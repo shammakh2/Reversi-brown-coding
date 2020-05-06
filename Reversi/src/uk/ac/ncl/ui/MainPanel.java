@@ -115,7 +115,7 @@ public class MainPanel extends JFrame {
         if (grayCells.size() == 0) {
             Cell nopponent = moveChecker.generateOpponent(OPPONENTS_CELL_STATUS);
             if (nopponent != null) {
-                opponent.colourTemp(OPPONENTS_COLOUR, true);
+                nopponent.colourTemp(OPPONENTS_COLOUR, true);
                 JOptionPane.showMessageDialog(this, "Skipped Black");
                 ActionListener taskPerformer = ae -> MoveOpponent(nopponent);
                 setUpTimer(taskPerformer);
@@ -137,9 +137,9 @@ public class MainPanel extends JFrame {
             moveChecker.flipPieces(tempEl, PLAYERS_CELL_STATUS);
             Cell opponent = moveChecker.generateOpponent(OPPONENTS_CELL_STATUS);
             if (opponent!=null) {
-                opponent.colourTemp(OPPONENTS_COLOUR, true);
                 ActionListener taskPerformer = ae -> MoveOpponent(opponent);
                 setUpTimer(taskPerformer);
+                opponent.colourTemp(OPPONENTS_COLOUR, true);
             }else if(moveChecker.findPotentialMoves(PLAYERS_CELL_STATUS).size() == 0 && moveChecker.findPotentialMoves(OPPONENTS_CELL_STATUS).size() == 0){
                 MoveOpponent(null);
                 CheckNextMove(moveChecker);

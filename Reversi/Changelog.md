@@ -134,7 +134,4 @@
        Added semi-colon after line `import uk.ac.ncl.entity.Cell`
        
        
-       
-       
-       
-       CELL ISLEGAL DOCSTRING
+ 
