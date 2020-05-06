@@ -9,7 +9,6 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import static uk.ac.ncl.Constants.BOARD_SIZE;
 
@@ -109,7 +108,7 @@ public class Cell {
      * Checks whether there exists a legal move for the piece.
      * If such a move exists, returns true and adds information to the piece.
      * @param colour - colour of the current player
-     * @param
+     * @param cells - list of all the cells in the game grid
      * @return whether move is possible for the piece. If this is the case, then possible moves are stored in Piece.
      */
     public boolean isLegal(CellStatus colour, Cell[][] cells){
@@ -117,7 +116,7 @@ public class Cell {
         boolean isLegal = false;
         int score = 0;
         ArrayList<DirectedMove> moves = new ArrayList<DirectedMove>();
-        int[][] DIRS = {{-1,-1}, {-1,0}, {0,0}, {-1,1}, {0,1}, {0,-1}, {1,1}, {1,0}, {1,-1}};
+        int[][] DIRS = {{-1,-1}, {-1,0}, {-1,1}, {0,1}, {0,-1}, {1,1}, {1,0}, {1,-1}};
 
         for (int[] dir : DIRS){
             int temp_score = 0;

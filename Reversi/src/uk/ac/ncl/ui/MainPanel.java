@@ -90,7 +90,7 @@ public class MainPanel extends JFrame {
      * @param moveChecker
      */
     private void CheckNextMove(MoveChecker moveChecker){
-        if (missedMoves > 0) {
+        if (missedMoves > 1) {
             JOptionPane.showMessageDialog(this, moveChecker.getFinalScore());
             System.exit(0);
         }
@@ -116,11 +116,11 @@ public class MainPanel extends JFrame {
             Cell nopponent = moveChecker.generateOpponent(OPPONENTS_CELL_STATUS);
             if (nopponent != null) {
                 opponent.colourTemp(OPPONENTS_COLOUR, true);
+                JOptionPane.showMessageDialog(this, "Skipped Black");
                 ActionListener taskPerformer = ae -> MoveOpponent(nopponent);
                 setUpTimer(taskPerformer);
-                JOptionPane.showMessageDialog(this, "Skipped Black");
             }else{
-                missedMoves += 1;
+                missedMoves += moveChecker.findPotentialMoves(OPPONENTS_CELL_STATUS).size() > 0 ? 1 : 2;
             }
         }
         CheckNextMove(moveChecker);

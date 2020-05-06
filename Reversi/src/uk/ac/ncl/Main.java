@@ -11,7 +11,6 @@ public class Main {
 
     public static void main(String[] args) {
         MainPanel ex = new MainPanel();
-        System.out.println("works boi");
         ex.setVisible(true);
     }
 }

@@ -9,6 +9,11 @@
         Changed `this.cells[column][row].getValue()` to `this.cells[row][column].getValue()`
         (swapped row and column index pointers) in first `if` statement.
         
+    2. Package: `uk.ac.ncl.entity`, Class: `Cell`, Method: `isLegal`
+    
+        Fixed javadocs, added explanation for the parameter `cells`
+            
+        
 
 + #####Version 0.0.5 || Bugfixing || Date: 2nd April 2020
         Fixing more bugs in the code.
@@ -39,6 +44,10 @@
         Added `break;` in the nested if statement.
         This is to stop flipping pieces after reaching closest piece that is the same color as the color playing the
         turn.
+        
+    4. Package: `uk.ac.ncl.ui`, Class: `MainPanel`
+        
+        Added pop ups for whenever turn is skipped.
         
         
 
